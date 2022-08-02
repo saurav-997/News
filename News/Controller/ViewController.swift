@@ -30,8 +30,7 @@ class ViewController: UIViewController
         mainTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customNewsCell")
         mainTableView.rowHeight = UITableView.automaticDimension
         mainTableView.estimatedRowHeight = 300
-        mainTableView.separatorStyle = .none
-        
+    //    mainTableView.separatorStyle = .none
         
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching news...")
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)

@@ -26,9 +26,8 @@ class CustomTableViewCell: UITableViewCell {
         super.updateConstraints()
         
         self.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.borderWidth = 0.25
         self.layer.cornerRadius = 5
+        self.backgroundColor = UIColor(red: 0.97, green: 0.99, blue: 0.99, alpha: 1.00)
         authorLabel.layer.masksToBounds = true
        // authorLabel.textco = UIEdgeInsets(top: 2, left: 5, bottom: 2, right: 5)
     }
