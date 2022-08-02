@@ -15,6 +15,7 @@ class ViewController: UIViewController
     
     var newsObj = NewsController()
     var newsURL: URL?
+    var newsTitle: String?
     var refreshControl = UIRefreshControl()
     var newsData = [NewsModel]()
     
@@ -85,14 +86,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
         return UITableView.automaticDimension
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         newsURL = URL(string: newsData[indexPath.row].url)
+        newsTitle = newsData[indexPath.row].title
         performSegue(withIdentifier: "showWebView", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let webVC = segue.destination as? WebViewController
         webVC?.myURL = newsURL
+        webVC?.newsTitle = newsTitle
     }
 }
 

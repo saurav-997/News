@@ -15,9 +15,11 @@ class WebViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navigationBackButton: UIBarButtonItem!
     var myURL: URL?
+    var newsTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.topItem?.title = "\(newsTitle ?? " News")"
         webView.uiDelegate = self
         webVCActivityIndicator.isHidden = false
     }
